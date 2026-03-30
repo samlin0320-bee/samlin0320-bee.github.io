@@ -2,10 +2,383 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0;url=https://samlin0320-bee.github.io/find-the-right-one/v71.html">
-<title>Redirecting...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>找對的人 — 姓名學關係鑑定工具</title>
+<meta name="description" content="透過姓名學五格數理與化氣計算，精準分析兩人之間的貴人、小人、平宮關係。免費線上姓名學合盤鑑定工具。">
+<meta name="keywords" content="姓名學,五格,合盤,貴人,小人,姓名分析,康熙字典,筆劃,化氣">
+<meta name="google-adsense-account" content="ca-pub-3078346009241198">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3078346009241198" crossorigin="anonymous"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: #111111;
+    color: #C0C0C0;
+    line-height: 1.8;
+  }
+
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, #111111 70%);
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #D4AF37;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.1rem;
+    color: rgba(192,192,192,0.8);
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+
+  .hero .cta-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: linear-gradient(135deg, #D4AF37, #B8860B);
+    color: #111111;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: transform 0.2s;
+  }
+
+  .hero .cta-btn:hover { transform: scale(1.05); }
+
+  .divider {
+    height: 1px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent);
+  }
+
+  .content-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+
+  .content-section h2 {
+    font-size: 1.8rem;
+    color: #D4AF37;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .content-section h3 {
+    font-size: 1.2rem;
+    color: #D4AF37;
+    margin: 28px 0 12px;
+  }
+
+  .content-section p {
+    margin-bottom: 16px;
+    color: rgba(192,192,192,0.85);
+    font-size: 1rem;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin: 32px 0;
+  }
+
+  .feature-card {
+    padding: 28px 24px;
+    background: rgba(28,21,39,0.5);
+    border: 1px solid rgba(212,175,55,0.15);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .feature-card .icon { font-size: 2.2rem; margin-bottom: 12px; }
+  .feature-card h3 { color: #D4AF37; margin: 0 0 8px; font-size: 1.1rem; }
+  .feature-card p { font-size: 0.9rem; color: rgba(192,192,192,0.7); margin: 0; }
+
+  .formula-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 24px 0;
+  }
+
+  .formula-table th {
+    background: rgba(212,175,55,0.1);
+    color: #D4AF37;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .formula-table td {
+    padding: 10px 16px;
+    color: rgba(192,192,192,0.8);
+    border-top: 1px solid rgba(212,175,55,0.1);
+  }
+
+  .formula-table tr:nth-child(even) td { background: rgba(28,21,39,0.3); }
+
+  .wuxing-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+    text-align: center;
+  }
+
+  .wuxing-item {
+    padding: 16px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(212,175,55,0.15);
+    background: rgba(28,21,39,0.4);
+  }
+
+  .wuxing-item .symbol { font-size: 1.8rem; margin-bottom: 4px; }
+  .wuxing-item .name { font-weight: 700; font-size: 1rem; }
+  .wuxing-item .nums { font-size: 0.85rem; color: rgba(192,192,192,0.6); margin-top: 4px; }
+
+  .scene-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 24px 0;
+  }
+
+  .scene-tag {
+    padding: 8px 18px;
+    background: rgba(28,21,39,0.5);
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: rgba(192,192,192,0.8);
+  }
+
+  .ad-slot {
+    text-align: center;
+    margin: 32px auto;
+    min-height: 90px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(192,192,192,0.4);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(212,175,55,0.1);
+  }
+
+  footer a { color: #D4AF37; text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .wuxing-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
 </head>
 <body>
-<p>Redirecting to <a href="https://samlin0320-bee.github.io/find-the-right-one/v71.html">找對的人 V7.1</a>...</p>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div>
+    <h1>找對的人</h1>
+    <p class="subtitle">透過姓名學五格數理與化氣計算，精準分析兩人之間的貴人、小人、平宮關係。收錄超過 8 萬字康熙字典筆劃資料庫，免費線上使用。</p>
+    <a href="/find-the-right-one/v71.html" class="cta-btn">立即開始合盤鑑定</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Ad Slot 1 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3078346009241198" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- What is Name Numerology -->
+<section class="content-section">
+  <h2>什麼是姓名學五格數理？</h2>
+  <p>姓名學五格數理是源自日本熊崎健翁的姓名學體系，透過姓名的康熙字典筆劃數，計算出天格、人格、地格、外格、總格五個格位的數字，再依據數理吉凶與五行屬性，分析一個人的性格特質、運勢走向，以及兩人之間的關係互動。</p>
+  <p>本工具採用「多結果並列」模式，一對人可同時擁有多種關係（貴人、小人、平宮等）。所有判定皆為雙向檢查，全面揭示兩人之間的能量互動。</p>
+
+  <h3>四大判定體系</h3>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="icon">✨</div>
+      <h3>貴人判定</h3>
+      <p>人格（上）拉拔地格（下），擁有人格的人是貴人。分為直接貴人與間接貴人（化氣），間接貴人力量為直接貴人的 10 倍。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🛡️</div>
+      <h3>小人判定</h3>
+      <p>擁有地格（上）的人，會被總格（下）的人拖累。分為明小人與暗小人（化氣），暗小人力量為明小人的 10 倍。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">👥</div>
+      <h3>平宮判定</h3>
+      <p>兩人同一格位的數字相同，代表在該面向上有共鳴。包含人格平宮、地格平宮、總格平宮三種。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⚖️</div>
+      <h3>陰陽盤判定</h3>
+      <p>依據五格數字的奇偶性，判定為全陽盤、全陰盤或一般盤，反映整體能量屬性。</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Five Grid Formulas -->
+<section class="content-section">
+  <h2>五格計算公式</h2>
+  <p>姓名學五格的計算方式，依據姓氏為單姓或複姓而有所不同。所有筆劃數均以康熙字典為準。</p>
+
+  <table class="formula-table">
+    <thead>
+      <tr><th>格位</th><th>單姓計算</th><th>複姓計算</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>天格</td><td>姓氏筆劃 + 1</td><td>姓1 + 姓2</td></tr>
+      <tr><td>人格</td><td>姓氏 + 名第一字</td><td>姓2 + 名第一字</td></tr>
+      <tr><td>地格</td><td>名第一字 + 名第二字（單名 +1）</td><td>名第一字 + 名第二字（單名 +1）</td></tr>
+      <tr><td>外格</td><td>總格 - 人格 + 1</td><td>姓1 + 名末字（單名 +1）</td></tr>
+      <tr><td>總格</td><td>所有字筆劃總和</td><td>所有字筆劃總和</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- Wu Xing -->
+<section class="content-section">
+  <h2>五行尾數法</h2>
+  <p>五格數字對應五行的方式採用「尾數法」，即取數字的個位數來判定五行屬性：</p>
+
+  <div class="wuxing-grid">
+    <div class="wuxing-item">
+      <div class="symbol" style="color:#4CAF50;">🌿</div>
+      <div class="name" style="color:#4CAF50;">木</div>
+      <div class="nums">尾數 1、2</div>
+    </div>
+    <div class="wuxing-item">
+      <div class="symbol" style="color:#F44336;">🔥</div>
+      <div class="name" style="color:#F44336;">火</div>
+      <div class="nums">尾數 3、4</div>
+    </div>
+    <div class="wuxing-item">
+      <div class="symbol" style="color:#FFC107;">🏔️</div>
+      <div class="name" style="color:#FFC107;">土</div>
+      <div class="nums">尾數 5、6</div>
+    </div>
+    <div class="wuxing-item">
+      <div class="symbol" style="color:#FF9800;">⚔️</div>
+      <div class="name" style="color:#FF9800;">金</div>
+      <div class="nums">尾數 7、8</div>
+    </div>
+    <div class="wuxing-item">
+      <div class="symbol" style="color:#2196F3;">💧</div>
+      <div class="name" style="color:#2196F3;">水</div>
+      <div class="nums">尾數 9、0</div>
+    </div>
+  </div>
+
+  <p>若一個人的五格涵蓋金、木、水、火、土五種屬性，即為「五行俱全」，代表能量完整平衡。五行俱全者如為貴人，可發揮 100 分貴人之力。</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- HuaQi -->
+<section class="content-section">
+  <h2>化氣計算</h2>
+  <p>化氣是將數字各位數反覆相加，直到剩下一位數的結果。化氣用於判定「間接關係」，間接關係的力量比直接關係大 10 倍，是姓名學中極為重要的隱性指標。</p>
+
+  <h3>計算範例</h3>
+  <table class="formula-table">
+    <thead>
+      <tr><th>原始數字</th><th>計算過程</th><th>化氣結果</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>27</td><td>2 + 7 = 9</td><td>9</td></tr>
+      <tr><td>34</td><td>3 + 4 = 7</td><td>7</td></tr>
+      <tr><td>48</td><td>4 + 8 = 12 → 1 + 2 = 3</td><td>3</td></tr>
+      <tr><td>156</td><td>1 + 5 + 6 = 12 → 1 + 2 = 3</td><td>3</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- Ad Slot 2 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3078346009241198" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- Use Cases -->
+<section class="content-section">
+  <h2>15 大適用場域</h2>
+  <p>姓名學合盤鑑定可應用於生活中各種人際關係場景，幫助您了解與身邊人的能量互動：</p>
+
+  <div class="scene-tags">
+    <span class="scene-tag">💑 情侶合盤</span>
+    <span class="scene-tag">💍 夫妻關係</span>
+    <span class="scene-tag">👨‍👩‍👧 親子互動</span>
+    <span class="scene-tag">🤝 合夥人評估</span>
+    <span class="scene-tag">💼 職場同事</span>
+    <span class="scene-tag">👔 主管部屬</span>
+    <span class="scene-tag">📚 師生關係</span>
+    <span class="scene-tag">🏠 室友相處</span>
+    <span class="scene-tag">👫 朋友交往</span>
+    <span class="scene-tag">🏢 客戶關係</span>
+    <span class="scene-tag">👨‍👩‍👧‍👦 家族成員</span>
+    <span class="scene-tag">🎓 同學互動</span>
+    <span class="scene-tag">🏘️ 鄰里關係</span>
+    <span class="scene-tag">💰 投資夥伴</span>
+    <span class="scene-tag">🌐 社群人脈</span>
+  </div>
+
+  <p style="text-align:center; margin-top:32px;">
+    <a href="/find-the-right-one/v71.html" class="cta-btn">前往合盤鑑定工具</a>
+  </p>
+</section>
+
+<div class="divider"></div>
+
+<!-- About -->
+<section class="content-section">
+  <h2>關於本工具</h2>
+  <p>「找對的人」是一款免費的線上姓名學合盤鑑定工具，整合超過 8 萬字的康熙字典筆劃資料庫，支援單姓、複姓、單名、雙名等各種姓名格式。系統自動計算五格數理、五行屬性、化氣值，並進行雙向貴人/小人/平宮判定，產出完整的合盤鑑定報告。</p>
+  <p>本工具持續更新優化中，歡迎提供使用回饋與建議。所有分析結果僅供參考，人際關係的經營仍需要雙方的用心與努力。</p>
+</section>
+
+<!-- Ad Slot 3 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3078346009241198" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer>
+  <p>&copy; 2025 找對的人 — 姓名學關係鑑定工具</p>
+  <p style="margin-top:8px;"><a href="/find-the-right-one/v71.html">合盤鑑定工具</a></p>
+</footer>
+
 </body>
 </html>
